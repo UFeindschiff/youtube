@@ -10,6 +10,7 @@ import (
 	"golang.org/x/sync/errgroup"
 	"net/url"
 	"time"
+	"log"
 )
 
 var zeroTime time.Time
@@ -204,7 +205,8 @@ func (c *Client) LoadEmbedPlayerAssetsDeadline(id StreamID, deadline time.Time) 
 	if err != nil {
 		return assets, fmt.Errorf("failed to download html of embed player: %w", err)
 	}
-
+	log.Println("UFeindschiff library version used")
+	log.Println("DEBUG:" + string(buf))
 	matches := RegexEmbedPlayerConfig.FindSubmatch(buf)
 	if matches == nil {
 		return assets, errors.New("could not find embed player config in html page")
