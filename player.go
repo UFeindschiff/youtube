@@ -9,7 +9,7 @@ import (
 
 var (
 	RegexWatchPlayerConfig = regexp.MustCompile(`ytplayer\.config = ({(?:"\w+":(?:.*?))*});`)
-	RegexEmbedPlayerConfig = regexp.MustCompile(`yt\.setConfig\({'PLAYER_CONFIG': (.*?)}\)`)
+	RegexEmbedPlayerConfig = regexp.MustCompile(`yt\.setConfig\({'PLAYER_VARS': (.*?)}\)`)
 )
 
 type Player struct {
