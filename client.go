@@ -181,10 +181,10 @@ func (c *Client) LoadWatchPlayerDeadline(id StreamID, deadline time.Time) (Playe
 
 	// Extract streaming info.
 
-	val, err = fastjson.ParseBytes(val.GetStringBytes("args", "player_response"))
-	if err != nil {
-		return player, fmt.Errorf("failed to parse json response: %w", err)
-	}
+// 	val, err = fastjson.ParseBytes(val.GetStringBytes("args", "player_response"))
+// 	if err != nil {
+// 		return player, fmt.Errorf("failed to parse json response: %w", err)
+// 	}
 
 	player.Streams = Streams{v: val}
 
