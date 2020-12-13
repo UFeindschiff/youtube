@@ -8,8 +8,8 @@ import (
 )
 
 var (
-	RegexWatchPlayerConfig = regexp.MustCompile(`ytplayer\.config = ({(?:"\w+":(?:.*?))*});`)
-	RegexEmbedPlayerConfig = regexp.MustCompile(`yt\.setConfig\({'PLAYER_VARS': (.*?)}\)`)
+	RegexWatchPlayerConfig = regexp.MustCompile(`var\sytInitialPlayerResponse\s*=\s*(\{.*\})`)
+	RegexEmbedPlayerConfig = regexp.MustCompile(`yt.setConfig\((\{.*\})`)
 )
 
 type Player struct {
