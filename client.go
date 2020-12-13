@@ -181,10 +181,10 @@ func (c *Client) LoadWatchPlayerDeadline(id StreamID, deadline time.Time) (Playe
 
 	// Extract streaming info.
 
-	val, err = fastjson.ParseBytes(val.GetStringBytes("args", "player_response"))
-	if err != nil {
-		return player, fmt.Errorf("failed to parse json response: %w", err)
-	}
+// 	val, err = fastjson.ParseBytes(val.GetStringBytes("args", "player_response"))
+// 	if err != nil {
+// 		return player, fmt.Errorf("failed to parse json response: %w", err)
+// 	}
 
 	player.Streams = Streams{v: val}
 
@@ -210,7 +210,6 @@ func (c *Client) LoadEmbedPlayerAssetsDeadline(id StreamID, deadline time.Time) 
 	if err != nil {
 		return assets, fmt.Errorf("failed to download html of embed player: %w", err)
 	}
-	log.Println("UFeindschiff library version used")
 // 	log.Println("DEBUG:" + string(buf))
 	matches := RegexEmbedPlayerConfig.FindSubmatch(buf)
 	if matches == nil {
