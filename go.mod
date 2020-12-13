@@ -1,4 +1,4 @@
-module github.com/UFeindschiff/youtube
+module github.com/lithdew/youtube
 
 go 1.14
 
